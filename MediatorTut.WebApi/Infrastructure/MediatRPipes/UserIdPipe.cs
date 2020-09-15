@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MediatorTut.WebApi.Infrastructure
+namespace MediatorTut.WebApi.Infrastructure.MediatRPipes
 {
     public class UserIdPipe<TIn, TOut> : IPipelineBehavior<TIn, TOut>
     {
@@ -21,7 +21,7 @@ namespace MediatorTut.WebApi.Infrastructure
             httpContext = httpContextAccessor.HttpContext;
         }
 
-        
+
 
 
         // This is a Middleware. We can have an access token coming in and we want to read the UserId.

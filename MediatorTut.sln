@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatorTut.WebApi", "MediatorTut.WebApi\MediatorTut.WebApi.csproj", "{E3D37423-F315-4F4D-B954-6F645727A6BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatorTut.WebApi", "MediatorTut.WebApi\MediatorTut.WebApi.csproj", "{E3D37423-F315-4F4D-B954-6F645727A6BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatorTut.Services", "MediatorTut.Services\MediatorTut.Services.csproj", "{EE7C9101-671D-43FB-843A-F79DEBD1A36B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatorTut.Services", "MediatorTut.Services\MediatorTut.Services.csproj", "{EE7C9101-671D-43FB-843A-F79DEBD1A36B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppPlayground", "ConsoleAppPlayground\ConsoleAppPlayground.csproj", "{3B08B50A-0D3C-45F8-90E8-BACC9C7E8E08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{EE7C9101-671D-43FB-843A-F79DEBD1A36B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE7C9101-671D-43FB-843A-F79DEBD1A36B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE7C9101-671D-43FB-843A-F79DEBD1A36B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B08B50A-0D3C-45F8-90E8-BACC9C7E8E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B08B50A-0D3C-45F8-90E8-BACC9C7E8E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B08B50A-0D3C-45F8-90E8-BACC9C7E8E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B08B50A-0D3C-45F8-90E8-BACC9C7E8E08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatorTut.Services;
 using MediatorTut.Services.Cars.Commands;
 using MediatorTut.Services.Cars.Queries;
 using MediatorTut.Services.Models;
@@ -36,7 +37,7 @@ namespace MediatorTut.WebApi.Controllers
 
 
         [HttpPost]
-        public async Task<string> Index(CreateCarCommand command)
+        public async Task<Response<Car>> CreateCar(CreateCarCommand command)
         {
             var response = await _mediator.Send(command);
             return response;

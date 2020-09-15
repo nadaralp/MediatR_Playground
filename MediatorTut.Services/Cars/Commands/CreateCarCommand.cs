@@ -1,4 +1,5 @@
 ﻿using MediatorTut.Services.Common;
+using MediatorTut.Services.Models;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -9,16 +10,29 @@ using System.Threading.Tasks;
 
 namespace MediatorTut.Services.Cars.Commands
 {
-    public class CreateCarCommand : BaseRequest, IRequest<string>
+    public class CreateCarCommand : BaseRequest, IRequest<Response<Car>>
     {
     }
 
 
-    public class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, string>
+    public class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, Response<Car>>
     {
-        public async Task<string> Handle(CreateCarCommand request, CancellationToken cancellationToken)
+        public async Task<Response<Car>> Handle(CreateCarCommand request, CancellationToken cancellationToken)
         {
-            return $"new car was created by {request.UserId}";
+            // If car creation failed
+            if (false)
+            {
+                Response.Fail<Car>("Already exists");
+            }
+
+
+            var car = new Car
+            {
+                Name = "Toyota"
+            };
+
+            return Response.Ok(car, "Car was created successfully");
+
         }
     }
 

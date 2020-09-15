@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MediatorTut.Services;
-using MediatorTut.WebApi.Infrastructure;
+using MediatorTut.WebApi.Infrastructure.MediatRPipes;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
