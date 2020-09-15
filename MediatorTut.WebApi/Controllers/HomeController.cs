@@ -26,6 +26,7 @@ namespace MediatorTut.WebApi.Controllers
         // You return what the handler returns
         public async Task<IEnumerable<Car>> Index()
         {
+
             var cars = await _mediator.Send(new GetAllCarsQuery());
             // Could do more stuff with this here.
             return cars;

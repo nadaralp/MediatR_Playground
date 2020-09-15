@@ -1,4 +1,5 @@
-﻿using MediatorTut.Services.Models;
+﻿using MediatorTut.Services.Common;
+using MediatorTut.Services.Models;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace MediatorTut.Services.Cars.Queries
     /// <summary>
     /// This is something to be used by mediator to trigger a call to the handler.
     /// </summary>
-    public class GetAllCarsQuery : IRequest<IEnumerable<Car>>
+    public class GetAllCarsQuery : BaseRequest, IRequest<IEnumerable<Car>>
     {
     }
 
@@ -34,7 +35,7 @@ namespace MediatorTut.Services.Cars.Queries
         public async Task<IEnumerable<Car>> Handle(GetAllCarsQuery request, CancellationToken cancellationToken)
         {
             List<Car> cars = new List<Car>();
-            cars.Add(new Car { Name = "Ford" });
+            cars.Add(new Car { Name = request.UserId });
             cars.Add(new Car { Name = "Mercedes" });
             cars.Add(new Car { Name = "Ferrari" });
 

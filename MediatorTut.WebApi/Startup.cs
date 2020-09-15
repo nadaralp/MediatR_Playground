@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MediatorTut.Services;
+using MediatorTut.WebApi.Infrastructure;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +28,15 @@ namespace MediatorTut.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            // Exposes http context accessor in the DI Container with IHttpContextAccessor
+            services.AddHttpContextAccessor();
+
+            // To add Pipe for mediator
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(UserIdPipe<,>));
+            // if you have multiple pipes. Add them in order top to bottom you need them. Same as middleware
+            //services.AddScoped(typeof(IPipelineBehavior<,>), typeof(UserIdPipe<,>));
+
             // Provide the assembly where your handlers live. The important bit is the handlers.
             services.AddMediatR(typeof(HandlersAssemblyReference).Assembly);
 

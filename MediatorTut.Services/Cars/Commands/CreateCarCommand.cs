@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using MediatorTut.Services.Common;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MediatorTut.Services.Cars.Commands
 {
-    public class CreateCarCommand : IRequest<string>
+    public class CreateCarCommand : BaseRequest, IRequest<string>
     {
     }
 
@@ -17,7 +18,7 @@ namespace MediatorTut.Services.Cars.Commands
     {
         public async Task<string> Handle(CreateCarCommand request, CancellationToken cancellationToken)
         {
-            return "new car was created";
+            return $"new car was created by {request.UserId}";
         }
     }
 
